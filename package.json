@@ -1,0 +1,28 @@
+{
+  "name": "tape-init",
+  "version": "0.1.0",
+  "description": "Add tape to your project",
+  "main": "index.js",
+  "scripts": {
+    "lint": "xo --space",
+    "pretest": "npm run -s lint",
+    "test": "tape 'test/**/*.js'"
+  },
+  "bin": {
+    "tape_init": "bin/tape_init"
+  },
+  "keywords": [],
+  "author": "Joakim Carlstein <joakim@klei.se>",
+  "license": "MIT",
+  "devDependencies": {
+    "dot-prop": "^2.2.0",
+    "tape": "^4.0.3",
+    "temp-write": "^1.1.2",
+    "xo": "^0.5.2"
+  },
+  "dependencies": {
+    "has-flag": "^1.0.0",
+    "look-up": "^0.7.1",
+    "yargs": "^3.18.0"
+  }
+}

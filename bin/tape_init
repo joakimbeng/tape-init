@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+'use strict';
+var yargs = require('yargs');
+var tapeInit = require('../');
+
+var argv = yargs
+  .usage('Usage: $0 [options]')
+  .option('promise', {
+    describe: 'Add blue-tape instead of tape',
+    type: 'boolean'
+  })
+  .option('pattern', {
+    describe: 'Glob pattern for test files',
+    type: 'string',
+    default: '\'test/**/*.js\''
+  })
+  .wrap(null)
+  .example('$0 --promise --pattern src/**/*_test.js', 'Add blue-tape to your project, running all src/**/*_test.js files on npm test')
+  .help('h')
+  .alias('h', 'help')
+  .argv;
+
+tapeInit(argv, function () {});
